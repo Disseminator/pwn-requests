@@ -50,7 +50,8 @@ jobs:
     - name: Check breaking change label
       id: check_breaking_change
       run: |
-        pattern='^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\(\w+\))?!:'
+        # pattern='^(build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test)(\(\w+\))?!:'
+        pattern='^.+'
         # Check if pattern matches
         if echo "${{ github.event.pull_request.title }}" | grep -qE "$pattern"; then
           echo "Matched breaking change pattern"
